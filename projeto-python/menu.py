@@ -135,11 +135,11 @@ if __name__ == '__main__':
                             system('cls')
                             if menu_nav == '1':
                                 valor = utils.validarInt(input('Digite o valor a depositar: '))
-                                usuario.informacoes_conta['saldo'] += valor
+                                usuario.depositar(valor)
 
                             if menu_nav == '2':
                                 valor = utils.validarInt(input('Digite o valor a sacar: '))
-                                usuario.informacoes_conta['saldo'] -= valor
+                                usuario.sacar(valor)
 
                             if menu_nav == '3':
                                 while True:
