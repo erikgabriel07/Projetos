@@ -12,7 +12,7 @@ def verificarDataNascimento(data: str):
     :return:
     """
     while True:
-        # Verificando se a data se possui a "/" e se o seu tamanho corresponde ao formato 00/00/00 ou 00/00/0000
+        # Verificando se a data possui a "/" e se o seu tamanho corresponde ao formato 00/00/00 ou 00/00/0000
         if '/' in data and 7 <= len(data) <= 10:
             formatando_a_data = data.split('/') # Precisamos separar a data fornecida e colocar em uma lista
             # Ao fazer isso, teremos a data fornecida da seguinte forma: formatando_a_data = [24, 09, 1998]
