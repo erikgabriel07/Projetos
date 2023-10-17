@@ -140,7 +140,7 @@ class Cliente:
                     print(f'[{index}] {indexes[index]}: {values}')
 
                 # Um erro sempre será retornado porque será apontado que a lista está fora de alcance, pois está sendo
-                # ignorando o "saldo" do cliente visto que ele pode alterar seu saldo depositando ou sacando
+                # ignorado o "saldo" do cliente visto que ele pode alterar seu saldo depositando ou sacando
                 # esse erro será apenas ignorado para que o programa possa fluir
                 except Exception:
                     pass
