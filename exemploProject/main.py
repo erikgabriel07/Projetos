@@ -22,7 +22,10 @@ clientesCadastrados.append(meucli2)
 sistema_ativo = True
 while sistema_ativo:
     boasVindas('BEM-VINDO')
+    print('[0] Para sair')
     navegacao = criarMenuDeNavegacao()
+    if navegacao == '0':
+      sistema_ativo = False
 
     # Cadastro de novos clientes
     if navegacao == '1':
