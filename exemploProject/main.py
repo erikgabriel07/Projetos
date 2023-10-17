@@ -8,9 +8,13 @@ from classes.utilitarios import *
 # Inicializando uma lista onde ficaram todos os nossos clientes do tipo objeto Cliente da classe importada.
 clientesCadastrados = []
 
-meucli = Cliente(1,2,3, '01/01/01', 1, 'Corrente', 9)
-meucli1 = Cliente(34,2,12, '01/01/01', 1, 'Poupança', 9)
-meucli2 = Cliente(89,22,98, '01/01/01', 1, 'Corrente', 9)
+# Usuários padrão, apague essa parte se preferir
+meucli = Cliente('Godofredo','Rua dos Morangos',
+                 '+5579998432756', '27/05/1988', 0, 'Corrente', 23459)
+meucli1 = Cliente('Victoria','Rua das Pedras',
+                  '+5579987436492','20/12/1999', 0, 'Poupança', 10000)
+meucli2 = Cliente('Julius','Rua do Sol',
+                  '+5579987435628', '01/01/01', 0, 'Corrente', 4500)
 clientesCadastrados.append(meucli)
 clientesCadastrados.append(meucli1)
 clientesCadastrados.append(meucli2)
