@@ -115,7 +115,7 @@ class Cliente:
                         # O cliente que transferiu o valor terá seu saldo decrementado
                         self.informacoes_cliente['saldo'] -= valor_a_transferir
 
-                # Quando tudo for concluído, o break irá parar a iteração para que ele pare de iterar até o fim
+                # Quando tudo for concluído, o break irá parar a iteração para que ele pare de iterar a lista
                 # sendo que a transação já foi feita
                 break
 
