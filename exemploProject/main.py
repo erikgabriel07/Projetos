@@ -81,12 +81,14 @@ while sistema_ativo:
 
             # Verificando se o usuário tem certeza de que deseja excluir a conta
             if are_you_sure in ['S', 's']:
+                try:
+                    # Primeiro apaga todas as informações do cliente
+                    clientesCadastrados[id_conta_excluir].excluirConta()
 
-                # Primeiro apaga todas as informações do cliente
-                clientesCadastrados[id_conta_excluir].excluirConta()
-
-                # Depois remove o cliente da lista de clientesCadastrados
-                clientesCadastrados.remove(clientesCadastrados[id_conta_excluir])
+                    # Depois remove o cliente da lista de clientesCadastrados
+                    clientesCadastrados.remove(clientesCadastrados[id_conta_excluir])
+                except Exception as error:
+                    continue
         else:
             print('Não há clientes cadastrados')
             sleep(2)
