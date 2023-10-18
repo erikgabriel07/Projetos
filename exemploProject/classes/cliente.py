@@ -91,29 +91,29 @@ class Cliente:
 
             # Verificando se o nome do usuario é igual ao nome fornecido no parâmetro "nome" da função
             if str(usuario.informacoes_cliente.get('nome')) == nome:
-
+                are_you_sure = '0'
                 # Se o saldo for menor do que o valor a ser transferido, será perguntado se a transação deve continuar
                 if self.informacoes_cliente.get('saldo') < valor_a_transferir:
                     are_you_sure = input(f'Seu saldo é de R${self.informacoes_cliente.get("saldo")}, tem certeza de que'
                           f'quer transferir R${valor_a_transferir}? (Você ficará negativado após isso)\n[0] Sim\n[1] '
                                          f'Não\n>>> ')
 
-                    if are_you_sure == '0':
-                        # Se a transação continuar, vamos pegar o usuário a quem se deve transferir
-                        usuario_a_transferir = usuario
+                if are_you_sure == '0' and self.informacoes_cliente.get('nome') != nome:
+                    # Se a transação continuar, vamos pegar o usuário a quem se deve transferir
+                    usuario_a_transferir = usuario
 
-                        # Este usuário terá o saldo incrementado pelo valor transferido
-                        usuario_a_transferir.informacoes_cliente['saldo'] += valor_a_transferir
+                    # Este usuário terá o saldo incrementado pelo valor transferido
+                    usuario_a_transferir.informacoes_cliente['saldo'] += valor_a_transferir
 
-                        # O histórico desse mesmo usuário receberá as informações da transação
-                        usuario_a_transferir.historico.append(f'Você recebeu um depósito no valor de '
-                                                              f'R${valor_a_transferir}')
+                    # O histórico desse mesmo usuário receberá as informações da transação
+                    usuario_a_transferir.historico.append(f'Você recebeu um depósito no valor de '
+                                                          f'R${valor_a_transferir}')
 
-                        # O cliente que transferiu recebe em seu histórico as informações da sua transação
-                        self.historico.append(f'Você transferiu R${valor_a_transferir} para {nome}')
+                    # O cliente que transferiu recebe em seu histórico as informações da sua transação
+                    self.historico.append(f'Você transferiu R${valor_a_transferir} para {nome}')
 
-                        # O cliente que transferiu o valor terá seu saldo decrementado
-                        self.informacoes_cliente['saldo'] -= valor_a_transferir
+                    # O cliente que transferiu o valor terá seu saldo decrementado
+                    self.informacoes_cliente['saldo'] -= valor_a_transferir
 
                 # Quando tudo for concluído, o break irá parar a iteração para que ele pare de iterar a lista
                 # sendo que a transação já foi feita
