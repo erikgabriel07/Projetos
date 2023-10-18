@@ -51,9 +51,10 @@ while sistema_ativo:
             print(f'{index}. \t {users.informacoes_cliente["nome"]}|{users.informacoes_cliente["tipo_da_conta"]}')
         print('-' * 20)
         print('Deixe em branco para sair')
-        id_conta_editar = verificarSeNumeroInteiro(input('Digite o ID da conta que deseja editar: '))
+        id_conta_editar = input('Digite o ID da conta que deseja editar: ')
         if id_conta_editar == '':
             continue
+        id_conta_editar = verificarSeNumeroInteiro(id_conta_editar)
 
         # Varrendo a lista de clientes cadastrados até encontrar aquele que o usuário escolheu pelo ID(index)
         for index, users in enumerate(clientesCadastrados):
