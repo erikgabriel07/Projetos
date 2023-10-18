@@ -73,7 +73,7 @@ while sistema_ativo:
                 print(f'{index}. \t {users.informacoes_cliente["nome"]}|{users.informacoes_cliente["tipo_da_conta"]}')
             print('-' * 20)
             print('Deixe em branco para sair')
-            id_conta_excluir = input('Digite o ID da conta que deseja excluir: ')
+            id_conta_excluir = verificarSeNumeroInteiro(input('Digite o ID da conta que deseja excluir: '))
             if id_conta_excluir == '':
                 continue
             are_you_sure = input('Você tem certeza? (S)im/(N)ão: ')[0]
